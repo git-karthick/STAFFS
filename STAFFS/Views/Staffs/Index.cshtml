@@ -1,0 +1,65 @@
+﻿@model IEnumerable<STAFFS.Models.Staffs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sQly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sDesg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sSal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sQly)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sDesg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sSal)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+              @*  @Html.ActionLink("Details", "Details", new { id=item.Id  }) |*@
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
